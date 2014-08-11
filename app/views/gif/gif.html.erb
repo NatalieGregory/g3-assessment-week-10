@@ -1,0 +1,22 @@
+<h1>New gif</h1>
+
+<%= form_for @gif, url: create_path, html: { class: "create-form" } do |f| %>
+  <% f.object.errors.full_messages.each do |error| %>
+    <div class="errors">
+      <%= error %>
+    </div>
+  <% end %>
+  <div>
+    <%= f.label :url %>
+    <%= f.url_field :url, autofocus: true %>
+  </div>
+  <div>
+    <%= f.label :Title %>
+    <%= f.title_field :title %>
+  </div>
+  <div>
+    <%= f.submit "Create gif" %>
+    <%= link_to "Create" %>
+  </div>
+
+<% end %>
